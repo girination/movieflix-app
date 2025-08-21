@@ -1,4 +1,4 @@
-
+"use client";
 import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import MovieCard from "@/components/MovieCard";
@@ -8,7 +8,7 @@ import { searchMovies } from "@/lib/tmdb";
 import { Movie } from "@/types/movie";
 
 const SearchResults = () => {
-  "use client";
+  
 
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
