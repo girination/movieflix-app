@@ -1,5 +1,4 @@
 
-
 import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import MovieCard from "@/components/MovieCard";
@@ -8,7 +7,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { searchMovies } from "@/lib/tmdb";
 import { Movie } from "@/types/movie";
 
-function SearchResults() {
+const SearchResults = () => {
   "use client";
 
   const searchParams = useSearchParams();
