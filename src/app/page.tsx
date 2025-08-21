@@ -10,7 +10,7 @@ export default async function HomePage() {
   try {
     movies = await getMovies();
   } catch (err) {
-    console.error('Failed to fetch movies:', err);
+    console.error('Failed to fetch movies:', err as Error);
     error = 'Failed to load movies. Please try again later.';
   }
 
