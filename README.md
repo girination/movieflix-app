@@ -122,6 +122,6 @@ movieflix-app/
 
 ---
 
-## **Built With**
+## **Built by**
 
 💙 **MovieFlix** was built by Girination.
