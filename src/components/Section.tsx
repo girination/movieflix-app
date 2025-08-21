@@ -1,6 +1,7 @@
 import MovieCard from "./MovieCard";
+import { Movie } from "@/types/movie";
 
-export default function Section({ title, movies }: { title: string; movies: any[] }) {
+export default function Section({ title, movies }: { title: string; movies: Movie[] }) {
   return (
     <section className="mt-10">
       <h2 className="text-2xl font-bold mb-5">{title}</h2>

@@ -1,6 +1,6 @@
 import { Movie, MovieResponse } from "@/types/movie";
 
-const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY || 'da134af2940b533c6268085caa6d1860';
+const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 const TMDB_BASE_URL = process.env.NEXT_PUBLIC_TMDB_BASE_URL || 'https://api.themoviedb.org/3';
 
 /**

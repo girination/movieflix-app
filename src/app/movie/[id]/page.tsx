@@ -5,6 +5,7 @@ import { Movie, Video } from "@/types/movie";
 import { getMovie } from "@/lib/tmdb";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import Link from "next/link";
+import Image from "next/image"; // Add this import
 
 interface MovieDetailProps {
   params: { id: string };
@@ -15,7 +16,6 @@ export default function MovieDetail({ params }: MovieDetailProps) {
   const [trailerKey, setTrailerKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +43,7 @@ export default function MovieDetail({ params }: MovieDetailProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white">
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
         <LoadingSpinner />
       </div>
     );
@@ -92,18 +92,16 @@ export default function MovieDetail({ params }: MovieDetailProps) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Poster */}
             <div className="lg:col-span-1">
-              {!imageError ? (
-                <img
+              <div className="w-full rounded-lg shadow-lg">
+                <Image
                   src={posterUrl}
                   alt={movie.title}
+                  width={500}
+                  height={750}
                   className="w-full rounded-lg shadow-lg"
-                  onError={() => setImageError(true)}
+                  priority
                 />
-              ) : (
-                <div className="w-full h-96 bg-gray-700 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-400">No Image Available</span>
-                </div>
-              )}
+              </div>
             </div>
 
             {/* Movie Info */}

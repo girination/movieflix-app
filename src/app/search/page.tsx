@@ -46,7 +46,7 @@ export default function SearchPage() {
 
         {query && (
           <p className="text-center text-gray-400 mb-6">
-            Search results for: "{query}"
+            Search results for: &quot;{query}&quot;
           </p>
         )}
 
@@ -64,7 +64,7 @@ export default function SearchPage() {
           </div>
         ) : query ? (
           <div className="text-center text-gray-400 p-8">
-            <p>No movies found for "{query}"</p>
+            <p>No movies found for &quot;{query}&quot;</p>
           </div>
         ) : (
           <div className="text-center text-gray-400 p-8">
